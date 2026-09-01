@@ -15,9 +15,6 @@ mainNav.querySelectorAll(".nav-link").forEach((link) => {
   });
 });
 
-/* ===================================================
-   Hero slider — ფოტოების ავტომატური ცვლა 5 წამში
-=================================================== */
 const slides = document.querySelectorAll("#hero-slider .slide");
 let currentSlide = 0;
 
@@ -32,4 +29,35 @@ if (slides.length > 0) {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
   }, 5000);
+}
+
+/* ===================================================
+   About Me — progress bar-ების ანიმაცია სქროლზე
+=================================================== */
+const skillsSection = document.querySelector("#skills");
+const progressFills = document.querySelectorAll(".progress-fill");
+let skillsAnimated = false;
+
+function animateSkills() {
+  progressFills.forEach((fill) => {
+    const percent = fill.dataset.percent || 0;
+    fill.style.width = percent + "%";
+  });
+}
+
+if (skillsSection) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !skillsAnimated) {
+          animateSkills();
+          skillsAnimated = true;
+          observer.unobserve(skillsSection);
+        }
+      });
+    },
+    { threshold: 0.4 },
+  );
+
+  observer.observe(skillsSection);
 }
