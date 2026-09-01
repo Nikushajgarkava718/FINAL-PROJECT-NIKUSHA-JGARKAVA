@@ -14,3 +14,22 @@ mainNav.querySelectorAll(".nav-link").forEach((link) => {
     burger.setAttribute("aria-expanded", "false");
   });
 });
+
+/* ===================================================
+   Hero slider — ფოტოების ავტომატური ცვლა 5 წამში
+=================================================== */
+const slides = document.querySelectorAll("#hero-slider .slide");
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+}
+
+if (slides.length > 0) {
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 5000);
+}
