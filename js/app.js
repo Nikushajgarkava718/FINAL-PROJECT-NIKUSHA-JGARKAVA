@@ -31,9 +31,6 @@ if (slides.length > 0) {
   }, 5000);
 }
 
-/* ===================================================
-   About Me — progress bar-ების ანიმაცია სქროლზე
-=================================================== */
 const skillsSection = document.querySelector("#skills");
 const progressFills = document.querySelectorAll(".progress-fill");
 let skillsAnimated = false;
