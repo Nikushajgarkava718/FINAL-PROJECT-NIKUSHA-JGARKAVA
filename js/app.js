@@ -82,28 +82,28 @@ const testimonials = [
     quote:
       "Nikusha completely reworked our onboarding flow. Drop-off dropped by 30% within the first month after launch.",
     name: "Giorgi Beridze",
-    role: "CEO, Fintech Startup",
+    role: "CEO, vaer Startup",
   },
   {
     photo: "src/ana kapanadze.png",
     quote:
       "Clear communication from day one, and the final designs were pixel-perfect. Our developers had zero questions during handoff.",
     name: "Ana Kapanadze",
-    role: "Product Manager",
+    role: " VR Product Manager",
   },
   {
     photo: "src/levan wereteli.png",
     quote:
       "We needed a full brand refresh in three weeks. Nikusha delivered on time without cutting corners on quality.",
     name: "Levan Tsereteli",
-    role: "Marketing Director",
+    role: "mcdonald's Marketing Director",
   },
   {
     photo: "src/mariamgogia.png",
     quote:
       "Genuinely one of the best designers I've worked with — thinks like a developer, which made collaboration effortless.",
     name: "Mariam Gogia",
-    role: "Founder",
+    role: "Founder of onlineshopping",
   },
 ];
 
