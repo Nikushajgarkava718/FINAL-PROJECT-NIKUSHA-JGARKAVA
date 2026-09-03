@@ -75,3 +75,60 @@ filterButtons.forEach((btn) => {
     });
   });
 });
+
+const testimonials = [
+  {
+    photo: "src/giorgiberidze.png",
+    quote:
+      "Nikusha completely reworked our onboarding flow. Drop-off dropped by 30% within the first month after launch.",
+    name: "Giorgi Beridze",
+    role: "CEO, Fintech Startup",
+  },
+  {
+    photo: "src/ana kapanadze.png",
+    quote:
+      "Clear communication from day one, and the final designs were pixel-perfect. Our developers had zero questions during handoff.",
+    name: "Ana Kapanadze",
+    role: "Product Manager",
+  },
+  {
+    photo: "src/levan wereteli.png",
+    quote:
+      "We needed a full brand refresh in three weeks. Nikusha delivered on time without cutting corners on quality.",
+    name: "Levan Tsereteli",
+    role: "Marketing Director",
+  },
+  {
+    photo: "src/mariamgogia.png",
+    quote:
+      "Genuinely one of the best designers I've worked with — thinks like a developer, which made collaboration effortless.",
+    name: "Mariam Gogia",
+    role: "Founder",
+  },
+];
+
+const testimonialCard = document.querySelector("#testimonial-card");
+const testimonialDots = document.querySelectorAll(".dot");
+
+function renderTestimonial(index) {
+  const data = testimonials[index];
+  if (!data || !testimonialCard) return;
+
+  testimonialCard.querySelector(".testimonial-photo").src = data.photo;
+  testimonialCard.querySelector(".quote").textContent = data.quote;
+  testimonialCard.querySelector(".testimonial-name").textContent = data.name;
+  testimonialCard.querySelector(".testimonial-role").textContent = data.role;
+
+  testimonialDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+}
+
+testimonialDots.forEach((dot) => {
+  dot.addEventListener("click", () => {
+    const index = Number(dot.dataset.index);
+    renderTestimonial(index);
+  });
+});
+
+renderTestimonial(0);
