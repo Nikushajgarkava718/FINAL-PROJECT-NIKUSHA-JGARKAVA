@@ -58,3 +58,20 @@ if (skillsSection) {
 
   observer.observe(skillsSection);
 }
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+
+    projectCards.forEach((card) => {
+      const matches = filter === "all" || card.dataset.category === filter;
+      card.classList.toggle("hidden", !matches);
+    });
+  });
+});

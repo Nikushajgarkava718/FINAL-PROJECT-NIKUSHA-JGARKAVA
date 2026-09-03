@@ -380,6 +380,79 @@ a {
   font-size: 0.92rem;
 }
 
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  background: #f4f3f1;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.project-card {
+  background: none;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+}
+
+.project-tag {
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.project-title {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+
 @media (max-width: 768px) {
   .main-nav {
     position: fixed;
@@ -469,5 +542,16 @@ a {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-buttons {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 8px;
   }
 }
